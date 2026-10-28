@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#121212"
+    android:padding="24dp">
+
+    <!-- Assistant Avatar / Persona Image -->
+    <ImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/professor_front"
+        android:scaleType="centerCrop"
+        android:background="@drawable/rounded_corner"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Assistant Title / Name -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Professor AI (Myra)"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Status / Response Text -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:text="Hello! I am your 20-year-old AI assistant. Tap the mic and tell me what to do."
+        android:textSize="16sp"
+        android:textColor="#CCCCCC"
+        android:gravity="center"
+        android:background="#1E1E1E"
+        android:padding="16dp"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Voice Control Button -->
+    <Button
+        android:id="@+id/btnSpeak"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Tap to Speak"
+        textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FF4081"
+        style="?android:attr/borderlessButtonStyle" />
+
+</LinearLayout>
