@@ -15,14 +15,15 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Download Gradle 8.0
-        run: |
-          wget https://services.gradle.org/distributions/gradle-8.0-bin.zip
-          unzip -q gradle-8.0-bin.zip
-          echo "$PWD/gradle-8.0/bin" >> $GITHUB_PATH
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew || true
 
-      - name: Build Debug APK
-        run: gradle assembleDebug
+      - name: Build with Gradle
+        env:
+          ANDROID_HOME: /usr/local/lib/android/sdk
+        run: |
+          echo "sdk.dir=$ANDROID_HOME" > local.properties
+          ./gradlew assembleDebug --stacktrace
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
